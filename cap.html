@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-width=1.0">
+	<meta name="description" content="Software Engineering Notes by Sunny Beta">
+	<title>SDE Notes</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+	<nav>
+		<h3>SDE Prepper</h3>
+		<input type="text" placeholder="Search ..."/>
+		<section class="contents">
+			<details>
+				<summary>Databases</summary>
+				<ul>
+					<li><a href="olapoltp.html">OLAP vs. OLTP</a></li>
+					<li><a href=".html">PostgreSQL</a></li>
+					<li><a href=".html">MongoDB</a></li>
+					<li><a href=".html">Redis</a></li>
+					<li><a href=".html">B+ Trees</a></li>
+				</ul>
+			</details>
+			<details>
+				<summary>Basics</summary>
+				<ul>
+					<li><a href="oops.html">OOPS</a></li>
+					<li><a href="solid.html">SOLID</a></li>
+				</ul>
+			</details>
+			<details>
+				<summary>Data Structures</summary>
+				<ul>
+					<li><a href=".html">Tree</a></li>
+					<li><a href=".html">Stack</a></li>
+					<li><a href=".html">Queue</a></li>
+					<li><a href=".html</a>">Linked Lis<a href=".html">t</a></li>
+					<li><a href=".html">Set</a></li>
+					<li><a href=".html">Hashmap</a></li>
+					<li><a href=".html">Graph</a></li>
+					<li><a href=".html">Trie</a></li>
+					<li><a href=".html">Suffix Array</a></li>
+					<li><a href=".html">Treap</a></li>
+			</details>
+			<details>
+				<summary>Algorithms</summary>
+				<ul>
+					<li><a href=".html">Merge Sort</a></li>
+					<li><a href=".html">Quick Sort</a></li>
+					<li><a href=".html">Binary Search</a></li>
+					<li><a href=".html">Binary Search</a></li>
+					<li><a href=".html">BFS</a></li>
+					<li><a href=".html">DFS</a></li>
+					<li><a href=".html">Aho Corasick</a></li>
+			</details>
+			<details>
+				<summary>Design Patterns</summary>
+				<ul>
+					<li><a href=".html">Adapter</a></li>
+					<li><a href=".html">Factory</a></li>
+					<li><a href=".html">Observer</a></li>
+					<li><a href=".html">Builder</a></li>
+					<li><a href=".html">Bridge</a></li>
+					<li><a href=".html">Prototpye</a></li>
+					<li><a href=".html">Singleton</a></li>
+					<li><a href=".html">Flyweight</a></li>
+				</ul>
+			</details>
+			<details>
+				<summary>Languages</summary>
+				<ul>
+					<li><a href=".html">Java</a></li>
+					<li><a href=".html">Javascript</a></li>
+					<li><a href=".html">Typescript</a></li>
+					<li><a href=".html">Python</a></li>
+				</ul>
+			</details>
+			<details>
+				<summary>DevOps</summary>
+				<ul>
+					<li><a href=".html">CI/CD</a></li>
+					<li><a href=".html">Docker</a></li>
+					<li><a href=".html">Jenkins</a></li>
+					<li><a href=".html">Kubernetes</a></li>
+					<li><a href=".html">AWS</a></li>
+				</ul>
+			</details>
+			<details>
+				<summary>AWS</summary>
+				<ul>
+					<li><a href=".html">S3</a></li>
+					<li><a href=".html">Lambda</a></li>
+					<li><a href=".html">SQS</a></li>
+					<li><a href=".html">SNS</a></li>
+					<li><a href=".html">Event Bridge</a></li>
+					<li><a href=".html">CFN</a></li>
+				</ul>
+			</details>
+			<details open>
+				<summary>System Design</summary>
+				<ul>
+					<li><a href=".html">Scaling</a></li>
+					<li><a href=".html">Caching</a></li>
+					<li class="selected"><a href=".html">CAP Theorem</a></li>
+					<li><a href="microservices.html">Microservices</a></li>
+				</ul>
+			</details>
+			<details>
+				<summary>Back End</summary>
+				<ul>
+					<li><a href=".html">Spring</a></li>
+					<li><a href=".html">Express</a></li>
+					<li><a href=".html">Node</a></li>
+					<li><a href=".html">GraphQL</a></li>
+				</ul>
+			</details>
+			<details>
+				<summary>Front End</summary>
+				<ul>
+					<li><a href=".html">VueJS</a></li>
+				</ul>
+			</details>
+		</section>
+	</nav>
+
+	<main>
+		<h2>CAP Theorem</h2>
+		<h3>Definitions</h3>
+		<ul>
+			<li><strong>Consistency. </strong>Ensuring that all clients see the same data at the same time</li>
+
+			<li><strong>Availability. </strong>Ability of a system to respond to requests</li>
+
+			<li><strong>Partition Tolerance. </strong>Ability of a system to operate if there is a network partition (for example, due to network failures)</li>
+		</ul>
+		<p>
+		</p>
+		<h3>Theorem</h3>
+		<p>
+			If the system prioritises consistency, it may become unavailble until the partition is resolved. If the system prioritises availability, it may allow updates to the data resulting in data inconsistencies.
+		</p>
+		<p>
+			Consistency, Availbility & Partition Tolerance cannot be supported at the same time by a distributed system.</strong>
+		<br/>
+		<br/>
+		<strong>
+			If a partition happens, the system must choose between consistency and availbility.
+		</strong>
+		<br/>
+		<br/>
+		</p>
+		<p>
+		In real world, there is a degree of availbility and consistency which has to be kept in mind before designing a distributed system.
+		</p>
+
+	</main>
+
+</body>
+
+</html>

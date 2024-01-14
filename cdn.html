@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-width=1.0">
+	<meta name="description" content="Software Engineering Notes by Sunny Beta">
+	<title>SDE Notes</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+	<nav>
+		<h3>SDE Prepper</h3>
+		<input type="text" placeholder="Search ..."/>
+		<section class="contents">
+			<details open>
+				<summary>Databases</summary>
+				<ul>
+					<li><a href="olapoltp.html">OLAP vs. OLTP</a></li>
+					<li><a href=".html">PostgreSQL</a></li>
+					<li><a href=".html">MongoDB</a></li>
+					<li><a href=".html">Redis</a></li>
+					<li><a href=".html">B+ Trees</a></li>
+				</ul>
+			</details>
+			<details open>
+				<summary>Basics</summary>
+				<ul>
+					<li><a href="oops.html">OOPS</a></li>
+					<li><a href="solid.html">SOLID</a></li>
+				</ul>
+			</details>
+			<details open>
+				<summary>Data Structures</summary>
+				<ul>
+					<li><a href=".html">Tree</a></li>
+					<li><a href=".html">Stack</a></li>
+					<li><a href=".html">Queue</a></li>
+					<li><a href=".html</a>">Linked Lis<a href=".html">t</a></li>
+					<li><a href=".html">Set</a></li>
+					<li><a href=".html">Hashmap</a></li>
+					<li><a href=".html">Graph</a></li>
+					<li><a href=".html">Trie</a></li>
+					<li><a href=".html">Suffix Array</a></li>
+					<li><a href=".html">Treap</a></li>
+			</details>
+			<details open>
+				<summary>Algorithms</summary>
+				<ul>
+					<li><a href=".html">Merge Sort</a></li>
+					<li><a href=".html">Quick Sort</a></li>
+					<li><a href=".html">Binary Search</a></li>
+					<li><a href=".html">Binary Search</a></li>
+					<li><a href=".html">BFS</a></li>
+					<li><a href=".html">DFS</a></li>
+					<li><a href=".html">Aho Corasick</a></li>
+			</details>
+			<details open>
+				<summary>Design Patterns</summary>
+				<ul>
+					<li><a href=".html">Adapter</a></li>
+					<li><a href=".html">Factory</a></li>
+					<li><a href=".html">Observer</a></li>
+					<li><a href=".html">Builder</a></li>
+					<li><a href=".html">Bridge</a></li>
+					<li><a href=".html">Prototpye</a></li>
+					<li><a href=".html">Singleton</a></li>
+					<li><a href=".html">Flyweight</a></li>
+				</ul>
+			</details>
+			<details open>
+				<summary>Languages</summary>
+				<ul>
+					<li><a href=".html">Java</a></li>
+					<li><a href=".html">Javascript</a></li>
+					<li><a href=".html">Typescript</a></li>
+					<li><a href=".html">Python</a></li>
+				</ul>
+			</details>
+			<details open>
+				<summary>DevOps</summary>
+				<ul>
+					<li><a href=".html">CI/CD</a></li>
+					<li><a href=".html">Docker</a></li>
+					<li><a href=".html">Jenkins</a></li>
+					<li><a href=".html">Kubernetes</a></li>
+					<li><a href=".html">AWS</a></li>
+				</ul>
+			</details>
+			<details open>
+				<summary>AWS</summary>
+				<ul>
+					<li><a href=".html">S3</a></li>
+					<li><a href=".html">Lambda</a></li>
+					<li><a href=".html">SQS</a></li>
+					<li><a href=".html">SNS</a></li>
+					<li><a href=".html">Event Bridge</a></li>
+					<li><a href=".html">CFN</a></li>
+				</ul>
+			</details>
+			<details open>
+				<summary>System Design</summary>
+				<ul>
+					<li><a href=".html">Scaling</a></li>
+					<li><a href=".html">Caching</a></li>
+					<li><a href="consistenthashing.html">Consistent Hashing</a></li>
+					<li><a href="cap.html">CAP Theorem</a></li>
+					<li><a href="microservices.html">Microservices</a></li>
+					<li class="selected"><a href="cdn.html">CDN</a></li>
+				</ul>
+			</details>
+			<details open>
+				<summary>Back End</summary>
+				<ul>
+					<li><a href=".html">Spring</a></li>
+					<li><a href=".html">Express</a></li>
+					<li><a href=".html">Node</a></li>
+					<li><a href=".html">GraphQL</a></li>
+				</ul>
+			</details>
+			<details open>
+				<summary>Front End</summary>
+				<ul>
+					<li><a href=".html">VueJS</a></li>
+				</ul>
+			</details>
+		</section>
+	</nav>
+
+	<main>
+		<h2>CDN</h2>
+		<p>
+		A <strong>CDN (Content Delivery Network)</strong> brings content closer to the user as performance is critical to user engagement and retention. 
+		<p>
+		</p>
+		To achieve this CDNs, deploy hundreds of servers all over the world. They are called <strong>PoP (Point of Presence)</strong> and the server inside them are called <strong>Edge Server</strong>. Each edge server acts as a reverse proxy with huge content cache.
+		<p>
+		</p>
+			If a piece of content is in the cache, it can be quickly returned the user.
+		<p>
+		</p>
+			All TLS connections terminate at the edge server which significanyl decreases the latency for the user.
+		</p>
+	</main>
+
+</body>
+
+</html>
+

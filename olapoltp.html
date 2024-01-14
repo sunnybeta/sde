@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-width=1.0">
+	<meta name="description" content="Software Engineering Notes by Sunny Beta">
+	<meta name="author" content="Sunny Beta">
+	<link rel="stylesheet" href="style.css" />
+	<title>SDE Notes</title>
+</head>
+
+<body>
+
+	<nav>
+		<h3>SDE Prepper</h3>
+		<input type="text" placeholder="Search ..."/>
+		<section class="contents">
+			<details open>
+				<summary>Databases</summary>
+				<ul>
+					<li class="selected"><a href="olapoltp.html">OLAP vs. OLTP</a></li>
+					<li>PostgreSQL</li>
+					<li>MongoDB</li>
+					<li>Redis</li>
+					<li>B+ Trees</li>
+				</ul>
+			</details>
+			<details>
+				<summary>Basics</summary>
+				<ul>
+					<li><a href="oops.html">OOPS</a></li>
+					<li><a href="solid.html">SOLID</a></li>
+				</ul>
+			</details>
+			<details>
+				<summary>Data Structures</summary>
+				<ul>
+					<li>Tree</li>
+					<li>Stack</li>
+					<li>Queue</li>
+					<li>Linked List</li>
+					<li>Set</li>
+					<li>Hashmap</li>
+					<li>Graph</li>
+					<li>Trie</li>
+					<li>Suffix Array</li>
+					<li>Treap</li>
+			</details>
+			<details>
+				<summary>Algorithms</summary>
+				<ul>
+					<li>Merge Sort</li>
+					<li>Quick Sort</li>
+					<li>Binary Search</li>
+					<li>Binary Search</li>
+					<li>BFS</li>
+					<li>DFS</li>
+					<li>Aho Corasick</li>
+			</details>
+			<details>
+				<summary>Design Patterns</summary>
+				<ul>
+					<li>Adapter</li>
+					<li>Factory</li>
+					<li>Observer</li>
+					<li>Builder</li>
+					<li>Bridge</li>
+					<li>Prototpye</li>
+					<li>Singleton</li>
+					<li>Flyweight</li>
+				</ul>
+			</details>
+			<details>
+				<summary>Languages</summary>
+				<ul>
+					<li>Java</li>
+					<li>Javascript</li>
+					<li>Typescript</li>
+					<li>Python</li>
+				</ul>
+			</details>
+			<details>
+				<summary>DevOps</summary>
+				<ul>
+					<li>CI/CD</li>
+					<li>Docker</li>
+					<li>Jenkins</li>
+					<li>Kubernetes</li>
+					<li>AWS</li>
+				</ul>
+			</details>
+			<details>
+				<summary>AWS</summary>
+				<ul>
+					<li>S3</li>
+					<li>Lambda</li>
+					<li>SQS</li>
+					<li>SNS</li>
+					<li>Event Bridge</li>
+					<li>CFN</li>
+				</ul>
+			</details>
+			<details>
+				<summary>System Design</summary>
+				<ul>
+					<li>Scaling</li>
+					<li>Caching</li>
+					<li>CAP Theorem</li>
+					<li>Microservices</li>
+				</ul>
+			</details>
+			<details>
+				<summary>Back End</summary>
+				<ul>
+					<li>Spring</li>
+					<li>Express</li>
+					<li>Node</li>
+					<li>GraphQL</li>
+				</ul>
+			</details>
+			<details>
+				<summary>Front End</summary>
+				<ul>
+					<li>VueJS</li>
+				</ul>
+			</details>
+		</section>
+	</nav>
+
+	<main>
+		<h2>OLAP vs. OLTP</h2>
+		<h3>OLAP</h3>
+		<p>
+			Online analytical processing (OLAP) is a system for performing multi-dimensional analysis at high speeds on large volumes of data. Typically, this data is from a data warehouse, data mart or some other centralized data store. OLAP is ideal for data mining, business intelligence and complex analytical calculations, as well as business reporting functions like financial analysis, budgeting and sales forecasting.
+
+			The core of most OLAP databases is the OLAP cube, which allows you to quickly query, report on and analyze multidimensional data. What’s a data dimension? It’s simply one element of a particular dataset. For example, sales figures might have several dimensions related to region, time of year, product models and more.
+
+			The OLAP cube extends the row-by-column format of a traditional relational database schema and adds layers for other data dimensions. For example, while the top layer of the cube might organize sales by region, data analysts can also “drill-down” into layers for sales by state/province, city and/or specific stores. This historical, aggregated data for OLAP is usually stored in a star schema or snowflake schema.
+		</p>
+		<h3>OLTP</h3>
+		<p>
+			Online transactional processing (OLTP) enables the real-time execution of large numbers of database transactions by large numbers of people, typically over the Internet. OLTP systems are behind many of our everyday transactions, from ATMs to in-store purchases to hotel reservations. OLTP can also drive non-financial transactions, including password changes and text messages.
+
+			OLTP systems use a relational database that can do the following:
+
+			Process a large number of relatively simple transactions — usually insertions, updates and deletions to data.
+			Enable multi-user access to the same data, while ensuring data integrity.
+			Support very rapid processing, with response times measured in milliseconds.
+			Provide indexed data sets for rapid searching, retrieval and querying.
+			Be available 24/7/365, with constant incremental backups.
+
+			Many organizations use OLTP systems to provide data for OLAP. In other words, a combination of both OLTP and OLAP are essential in our data-driven world.
+		</p>
+		<h3>Key Differences</h3>
+			<p>
+			The main distinction between the two systems is in their names: analytical vs. transactional. Each system is optimized for that type of processing.
+			</p>
+
+			<p>
+			OLAP is optimized for conducting complex data analysis for smarter decision-making. OLAP systems are designed for use by data scientists, business analysts and knowledge workers, and they support business intelligence (BI), data mining and other decision support applications.
+			</p>
+
+			<p>
+			OLTP, on the other hand, is optimized for processing a massive number of transactions. OLTP systems are designed for use by frontline workers (e.g., cashiers, bank tellers, hotel desk clerks) or for customer self-service applications (e.g., online banking, e-commerce, travel reservations).
+			</p>
+			<br/>
+
+			<p>
+			<strong>Focus</strong>: OLAP systems allow you to extract data for complex analysis. To drive business decisions, the queries often involve large numbers of records. In contrast, OLTP systems are ideal for making simple updates, insertions and deletions in databases. The queries typically involve just one or a few records.
+			</p>
+			<p>
+			<strong>Data source</strong>: An OLAP database has a multi-dimensional schema, so it can support complex queries of multiple data facts from current and historical data. Different OLTP databases can be the source of aggregated data for OLAP, and they may be organized as a data warehouse. OLTP, on the other hand, uses a traditional DBMS to accommodate a large volume of real-time transactions.
+			</p>
+			<p>
+			<strong>Processing time</strong>: In OLAP, response times are orders of magnitude slower than OLTP. Workloads are read-intensive, involving enormous data sets. For OLTP transactions and responses, every millisecond counts. Workloads involve simple read and write operations via SQL (structured query language), requiring less time and less storage space.
+			</p>
+			<p>
+			<strong>Availability</strong>: Since they don’t modify current data, OLAP systems can be backed up less frequently. However, OLTP systems modify data frequently, since this is the nature of transactional processing. They require frequent or concurrent backups to help maintain data integrity.
+			</p>
+		</p>
+	</main>
+
+</body>
+
+</html>
