@@ -1,0 +1,100 @@
+:root{
+	--white: #ddd;
+	--black: #000;
+	--orange: orange;
+	--grey: #666;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	min-width: 0;
+	font-family: sans-serif;
+}
+
+a{
+	text-decoration: none;
+}
+
+body{
+	display: flex;
+	background-color: var(--black);
+	color: var(--white);
+}
+
+nav{
+	min-width: 15rem;
+	padding-left: 1rem;
+	text-align: center;
+}
+
+nav > input{
+	display: none;
+	outline: none;
+	margin: 0.5rem 0;
+	border-radius: 15px;
+	padding: 0.3rem 0.5rem;
+}
+
+nav > h3{
+	text-align: center;
+	padding: 1rem;
+	text-transform: uppercase;
+}
+
+nav details{
+	text-align: left;
+	padding: 0.5rem;
+}
+
+nav details > summary{
+	font-weight: bold;
+}
+
+nav details > summary:hover{
+	font-size: 1.1rem;
+	transition-duration: 200ms;
+}
+
+nav details ul{
+	color: var(--grey);
+	padding: 0.2rem 1rem;
+}
+
+nav details ul li:hover{
+	text-decoration: underline;
+	font-size: 1.3rem;
+	transition-duration: 200ms;
+}
+
+nav details ul a{
+	color: var(--white);
+}
+
+nav details ul .selected & a{
+	color: var(--orange);
+}
+
+nav details ul .selected a{
+	color: var(--orange);
+	font-weight: bold;
+}
+
+main{
+	padding: 1rem 3rem;
+	max-height: 100%;
+	min-height: 100vh;
+}
+
+main ul{
+	padding-left: 1rem;
+}
+
+main h3{
+	padding: 0.7rem 0;
+}
+
+main p{
+	padding: 1rem;
+}
