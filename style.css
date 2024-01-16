@@ -3,6 +3,7 @@
 	--black: #000;
 	--orange: orange;
 	--grey: #666;
+	--light-grey: #999;
 }
 
 *{
@@ -11,6 +12,7 @@
 	box-sizing: border-box;
 	min-width: 0;
 	font-family: sans-serif;
+	font-size: 24px;
 }
 
 a{
@@ -25,8 +27,6 @@ body{
 
 nav{
 	min-width: 15rem;
-	padding-left: 1rem;
-	text-align: center;
 }
 
 nav > input{
@@ -38,7 +38,6 @@ nav > input{
 }
 
 nav > h3{
-	text-align: center;
 	padding: 1rem;
 	text-transform: uppercase;
 }
@@ -55,6 +54,7 @@ nav details > summary{
 nav details > summary:hover{
 	font-size: 1.1rem;
 	transition-duration: 200ms;
+	cursor: pointer;
 }
 
 nav details ul{
@@ -69,7 +69,7 @@ nav details ul li:hover{
 }
 
 nav details ul a{
-	color: var(--white);
+	color: var(--light-grey);
 }
 
 nav details ul .selected & a{
@@ -96,5 +96,5 @@ main h3{
 }
 
 main p{
-	padding: 1rem;
+	padding: 1rem 0;
 }
