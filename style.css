@@ -1,18 +1,37 @@
 :root{
-	--white: #ddd;
-	--black: #000;
-	--orange: orange;
-	--grey: #666;
-	--light-grey: #999;
+	--text: #ddd;
+	--background: #000;
+	--accent: orange;
+	--grey: #222;
 }
 
 *{
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
 	min-width: 0;
-	font-family: sans-serif;
-	font-size: 24px;
+	box-sizing: border-box;
+}
+
+*::-webkit-scrollbar-thumb {
+	background: transparent;
+}
+
+*::-webkit-scrollbar {
+	max-width: 0.4rem;
+	max-height: 0.4rem;
+}
+
+*::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+*:hover::-webkit-scrollbar-thumb {
+	background: var(--text);
+	border-radius: 1rem;
+}
+
+*:hover::-webkit-scrollbar-track {
+	background: transparent;
 }
 
 a{
@@ -20,21 +39,31 @@ a{
 }
 
 body{
-	display: flex;
-	background-color: var(--black);
-	color: var(--white);
+	background-color: var(--background);
+	color: var(--text);
+	font-size: 18px;
 }
 
 nav{
-	min-width: 15rem;
+	z-index: 100;
+	background-color: var(--grey);
+	position: fixed;
+	text-align: center;
+	width: 20rem;
+	height: 100%;
+	overflow-y: scroll;
 }
+
 
 nav > input{
 	display: none;
 	outline: none;
-	margin: 0.5rem 0;
 	border-radius: 15px;
 	padding: 0.3rem 0.5rem;
+}
+
+nav section{
+	text-align: center;
 }
 
 nav > h3{
@@ -43,12 +72,15 @@ nav > h3{
 }
 
 nav details{
-	text-align: left;
+	text-align: center;
 	padding: 0.5rem;
+
 }
 
 nav details > summary{
 	font-weight: bold;
+	padding-right: 0.9rem;
+	text-transform: uppercase;
 }
 
 nav details > summary:hover{
@@ -58,8 +90,8 @@ nav details > summary:hover{
 }
 
 nav details ul{
-	color: var(--grey);
 	padding: 0.2rem 1rem;
+	list-style: none;
 }
 
 nav details ul li:hover{
@@ -69,22 +101,40 @@ nav details ul li:hover{
 }
 
 nav details ul a{
-	color: var(--light-grey);
+	color: var(--text);
 }
 
 nav details ul .selected & a{
-	color: var(--orange);
+	color: var(--accent);
 }
 
 nav details ul .selected a{
-	color: var(--orange);
+	color: var(--accent);
 	font-weight: bold;
 }
 
 main{
-	padding: 1rem 3rem;
+	position: relative;
+	padding: 2rem 2rem 0 22rem;
 	max-height: 100%;
 	min-height: 100vh;
+}
+
+main details {
+	background-color: var(--grey);
+	margin: 0.5rem 0 0.5rem 0;
+	padding: 1rem 1rem;
+	border-radius: 1.5rem;
+	max-height: 100%;
+}
+
+main details > summary {
+	font-size: 1.5rem;
+}
+
+main details > summary:hover{
+	text-decoration: underline;
+	cursor: pointer;
 }
 
 main ul{
@@ -98,3 +148,10 @@ main h3{
 main p{
 	padding: 1rem 0;
 }
+
+main pre{
+	border: 1px solid var(--text);
+	overflow: auto;
+	padding: 1rem 1rem;
+}
+
