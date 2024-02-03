@@ -15,6 +15,35 @@
 
 	<main>
 		<h1>Java</h1>
+
+		<details>
+			<summary>Marker Interface</summary>
+			<p>
+			A <strong>Marker Interface</strong> and <strong>Tagging Interface</strong> is an interface which has no methods or constants inside it. It's job is to provide runtime type information about objects. The <code>Sizeable</code>, <code>Cloneable</code> and <code>Remote</code> interfaces are examples of built-in Java marker interfaces.
+			</p>
+			<pre><code>public class Main{
+    public static void main(String[] args){
+        Hello hello = new Hello();
+        Bye bye = new Bye();
+        if (!(hello instanceof Greeting)) System.out.println("Hello is not a greeting.");
+        else System.out.println("Hello is a greeting");
+        if (!(bye instanceof Greeting)) System.out.println("Bye is not a greeting");
+        else System.out.println("Bye is a greeting");
+    }
+}
+
+public interface Greeting {
+}
+
+public class Hello implements Greeting {
+    public Hello() {}
+}
+
+public class Bye{
+    public Bye() {}
+}</code></pre>
+		</details>
+
 		<details>
 			<summary>Serialization vs Deserializatioation</summary>
 			<p>
@@ -54,33 +83,6 @@
 			<p>
 			No. We must have a <code>catch</code> or a <code>finally</code> block along with the <code>try</code> block.
 			</p>
-		</details>
-		<details class='faq'>
-			<summary>Marker Interface</summary>
-			<p>
-			A <strong>Marker Interface</strong> and <strong>Tagging Interface</strong> is an interface which has no methods or constants inside it. It's job is to provide runtime type information about objects. The <code>Sizeable</code>, <code>Cloneable</code> and <code>Remote</code> interfaces are examples of built-in Java marker interfaces.
-			</p>
-			<pre><code>public class Main{
-    public static void main(String[] args){
-        Hello hello = new Hello();
-        Bye bye = new Bye();
-        if (!(hello instanceof Greeting)) System.out.println("Hello is not a greeting.");
-        else System.out.println("Hello is a greeting");
-        if (!(bye instanceof Greeting)) System.out.println("Bye is not a greeting");
-        else System.out.println("Bye is a greeting");
-    }
-}
-
-public interface Greeting {
-}
-
-public class Hello implements Greeting {
-    public Hello() {}
-}
-
-public class Bye{
-    public Bye() {}
-}</code></pre>
 		</details>
 			<li>Composition vs Aggergation</li>
 			<li>Queue: poll vs remove</li>
