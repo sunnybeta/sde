@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-width=1.0">
+	<meta name="author" content="Sunny Beta">
+	<meta name="description" content="Software Engineering Notes by Sunny Beta: Singleton Design Pattern">
+	<title>SDE Notes</title>
+	<link rel="stylesheet" href="style.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+
+<body>
+
+<main>
+	<h1>Strategy Design Pattern</h2>
+
+	<ul class="bullet">
+		<li>Behavorial Design Pattern</li>
+		<li>This lets you define a family of algorithms put each of the into a separate class and make their object interchangeable</li>
+		<li>Example: Payment Service which supports multiple forms of payment like PayPal and Credit Card</li>
+		<li>This violates Single Responsibility Principle and the Open Closed Principle</li>
+		<li>Create a strategy <code>interface</code> which is implemented by multiple concrete classes</li>
+		<li>Create a <code>context</code> class which interacts with the various strategies via this interface</li>
+	</ul>
+
+	<pre><code>// Strategy Design Pattern
+public class Main {
+  public static void main(String[] args) {
+    PaymentService ps1= new PaymentService(123.0f, true, new CreditCard());
+    ps1.processOrder();
+    PaymentService ps2= new PaymentService(123.0f, false, new PayPal());
+    ps2.processOrder();
+  }
+}
+
+/**
+ * Common Interface for all Payment Types
+ */
+public interface PaymentStrategy {
+  public void collectPaymentDetails();
+  public boolean validatePaymentDetails();
+  public void pay(float amount);
+}
+
+public class Card{
+  private float amount = 1_000_000.0f;
+  public String cardNumber;
+  public String exp;
+  public String ccv;
+
+  public Card(String cardNumber, String exp, String ccv) {
+    this.cardNumber = cardNumber;
+    this.exp = exp;
+    this.ccv = ccv;
+  }
+
+  public float getAmount() {
+    return amount;
+  }
+
+  public void setAmount(float newAmount) {
+    amount = newAmount;
+  }
+
+}
+
+
+/**
+ * Concrete Strategy
+ * Payment by credit card
+ */
+public class CreditCard implements PaymentStrategy{
+  private Card card;
+
+  public void collectPaymentDetails() {
+    card = new Card("4141 4141 4141 4141", "01/01/2028"," 123");
+  }
+
+  public boolean validatePaymentDetails() {
+    return true;
+  }
+
+  public void pay(float amount) {
+    System.out.println("Paying " + amount + " using Credit Card");
+    card.setAmount(card.getAmount() - amount);
+  }
+
+}
+
+/**
+ * Concrete Strategy
+ * Payment via Pay Pal
+ */
+public class PayPal implements PaymentStrategy{
+  private String email;
+  private String password;
+
+  public void collectPaymentDetails() {
+    email = "sunnybeta@protonmail.com";
+    password = "pp";
+  }
+
+  public boolean validatePaymentDetails() {
+    return true;
+  }
+
+  public void pay(float amount) {
+    System.out.println("Paying " + amount + " via PayPal");
+  }
+
+}
+
+/**
+ * Context Class
+ * This class maintains a reference to one of the ocncrete strategies
+ * and communicates with this object only via the strategy interface
+ */
+public class PaymentService {
+  private float cost;
+  private boolean includeDelivery;
+  private PaymentStrategy paymentStrategy;
+
+  public PaymentService(float cost, boolean includeDelivery, PaymentStrategy paymentStrategy) {
+    this.cost = cost;
+    this.includeDelivery = includeDelivery;
+    this.paymentStrategy = paymentStrategy;
+  }
+
+  public void processOrder() {
+    paymentStrategy.collectPaymentDetails();
+    if (paymentStrategy.validatePaymentDetails()) {
+      paymentStrategy.pay(getTotal());
+    }
+  }
+
+  private float getTotal() {
+    return includeDelivery ? cost + 10.0f : cost;
+  }
+}</code></pre>
+
+</main>
+
+</body>
+
+</html>

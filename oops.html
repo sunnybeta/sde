@@ -4,219 +4,218 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Sunny Beta">
 	<meta name="description" content="Software Engineering Notes by Sunny Beta: OOPS">
-	<title>OOPS: SDE Notes</title>
+	<title>SDE Notes | OOPS</title>
 	<link rel="stylesheet" href="style.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
 </head>
 
 <body>
 
-	<nav>
-		<h3>SDE Notes</h3>
-		<input type="text" placeholder="Search ..."/>
-		<section class="contents">
-			<details open>
-				<summary>Basics</summary>
-				<ul>
-					<li class="selected"><a href="oops.html">OOPS</a></li>
-					<li><a href="solid.html">SOLID</a></li>
-					<li><a href="multithreading.html">Multithreading</a></li>
-					<li><a href="concurrency.html">Concurrency</a></li>
-				</ul>
-			</details>
-			<details open>
-				<summary>Databases</summary>
-				<ul>
-					<li><a href="olapoltp.html">OLAP vs. OLTP</a></li>
-					<li><a href="postgresql.html">PostgreSQL</a></li>
-					<li><a href="mongodb.html">MongoDB</a></li>
-					<li><a href="redis.html">Redis</a></li>
-					<li><a href="bp-trees.html">B+ Trees</a></li>
-				</ul>
-			</details>
-			<details open>
-				<summary>Data Structures</summary>
-				<ul>
-					<li><a href="linkedlist.html">Linked Lis<a href=".html">t</a></li>
-					<li><a href="stack.html">Stack</a></li>
-					<li><a href="queue.html">Queue</a></li>
-					<li><a href="set.html">Set</a></li>
-					<li><a href="hashmap.html">Hashmap</a></li>
-					<li><a href="heap.html">Heap</a></li>
-					<li><a href="priorityqueue.html">Priority Queue</a></li>
-					<li><a href="tree.html">Tree</a></li>
-					<li><a href="graph.html">Graph</a></li>
-					<li><a href="trie.html">Trie</a></li>
-					<li><a href="unionfind.html">Union-Find</a></li>
-					<li><a href="suffixarray.html">Suffix Array</a></li>
-					<li><a href="treap.html">Treap</a></li>
-			</details>
-			<details open>
-				<summary>Algorithms</summary>
-				<ul>
-					<li><a href="mergesort.html">Merge Sort</a></li>
-					<li><a href="quicksort.html">Quick Sort</a></li>
-					<li><a href="binarysearch.html">Binary Search</a></li>
-					<li><a href="bfs.html">BFS</a></li>
-					<li><a href="dfs.html">DFS</a></li>
-					<li><a href="dijkstra.html">Dijkstra</a></li>
-					<li><a href="tarjan.html">Tarjan</a></li>
-					<li><a href="kruskal.html">Kruskal</a></li>
-					<li><a href="kahn.html">Kahn</a></li>
-					<li><a href="knuth-morris-pratt.html">Knuth-Morris-Pratt</a></li>
-					<li><a href="ahocorasick.html">Aho Corasick</a></li>
-			</details>
-			<details open>
-				<summary>Design Patterns</summary>
-				<ul>
-					<li><a href="adapter.html">Adapter</a></li>
-					<li><a href="factory.html">Factory</a></li>
-					<li><a href="observer.html">Observer</a></li>
-					<li><a href="builder.html">Builder</a></li>
-					<li><a href="bridge.html">Bridge</a></li>
-					<li><a href="prototype.html">Prototpye</a></li>
-					<li><a href="singleton.html">Singleton</a></li>
-					<li><a href="flyweight.html">Flyweight</a></li>
-					<li><a href="decorator.html">Decorator</a></li>
-					<li><a href="facade.html">Facade</a></li>
-					<li><a href="proxy.html">Proxy</a></li>
-					<li><a href="iterator.html">Iterator</a></li>
-					<li><a href="mediator.html">Mediator</a></li>
-					<li><a href="state.html">State</a></li>
-				</ul>
-			</details>
-			<details open>
-				<summary>Languages</summary>
-				<ul>
-					<li><a href="java.html">Java</a></li>
-					<li><a href="javascript.html">Javascript</a></li>
-					<li><a href="typescript.html">Typescript</a></li>
-					<li><a href="python.html">Python</a></li>
-				</ul>
-			</details>
-			<details open>
-				<summary>DevOps</summary>
-				<ul>
-					<li><a href="cicd.html">CI/CD</a></li>
-					<li><a href="docker.html">Docker</a></li>
-					<li><a href="jenkins.html">Jenkins</a></li>
-					<li><a href="kubernetes.html">Kubernetes</a></li>
-					<li><a href="terraform.html">Terraform</a></li>
-					<li><a href="nginx.html">NGINX</a></li>
-					<li><a href="aws.html">AWS</a></li>
-				</ul>
-			</details>
-			<details open>
-				<summary>AWS</summary>
-				<ul>
-					<li><a href="s3.html">S3</a></li>
-					<li><a href="lambda.html">Lambda</a></li>
-					<li><a href="sqs.html">SQS</a></li>
-					<li><a href="sns.html">SNS</a></li>
-					<li><a href="eventbridge.html">Event Bridge</a></li>
-					<li><a href="cfn.html">CFN</a></li>
-					<li><a href="iam.html">IAM</a></li>
-				</ul>
-			</details>
-			<details open>
-				<summary>System Design</summary>
-				<ul>
-					<li><a href="scaling.html">Scaling</a></li>
-					<li><a href="caching.html">Caching</a></li>
-					<li><a href="consistenthashing.html">Consistent Hashing</a></li>
-					<li><a href="cap.html">CAP Theorem</a></li>
-					<li><a href="microservices.html">Microservices</a></li>
-					<li><a href="cdn.html">CDN</a></li>
-					<li><a href="oauth.html">OAuth</a></li>
-				</ul>
-			</details>
-			<details open>
-				<summary>Back End</summary>
-				<ul>
-					<li><a href="spring.html">Spring</a></li>
-					<li><a href="express.html">Express</a></li>
-					<li><a href="node.html">Node</a></li>
-					<li><a href="graphql.html">GraphQL</a></li>
-				</ul>
-			</details>
-			<details open>
-				<summary>Front End</summary>
-				<ul>
-					<li><a href="vuejs.html">VueJS</a></li>
-				</ul>
-			</details>
-		</section>
-	</nav>
-
 	<main>
-		<h2>OOPS</h2>
+		<h2>Object Oriented Programming System</h2>
 		<details>
 			<summary>Inheritance</summary>
 			<p>
-				Inheritance is the concept in OOPs in which one class inherits the attributes and methods of another class. The class whose properties and methods are inherited is known as the *Parent class* or *Superclass*. And the class that inherits the properties from the parent class is the *Child class* or *Subclass*. Inheritance establishes a *is-a*  or *has-a* relation ship between two classes: `class A` *is-a* `class B`
+				Inheritance is the concept in OOPs in which one class inherits the attributes and methods of another class. The class whose properties and methods are inherited is known as the *Parent class* or *Superclass*. And the class that inherits the properties from the parent class is the *Child class* or *Subclass*. Inheritance establishes a *is-a*  or *has-a* relation ship between two classes: <code>class A</code> *is-a* <code>class B</code>
 			</p>
-			<pre><code lang="java">class Inheritance {
-  public static void main(String[] args) {
-    Person p = new Person("Sunny", "Beta");
-    p.fullname();
-    Employee e = new Employee("Cloudy", "Alpha", 10_00_000f);
-    e.fullname();
-  }
+<pre><code class="language-java">class Inheritance {
+    public static void main(String[] args) {
+        Person p = new Person("Sunny", "Beta");
+        p.fullname();
+        Employee e = new Employee("Cloudy", "Alpha", 10_00_000f);
+        e.fullname();
+    }
 }
 
 class Person {
-  public String fname;
-  public String lname;
-  public Person(String firstName, String lastName) {
-    fname = firstName;
-    lname = lastName;
-  }
+    public String fname;
+    public String lname;
+    public Person(String firstName, String lastName) {
+        fname = firstName;
+        lname = lastName;
+    }
 
-  public void fullname() {
-    System.out.println(fname + " " + lname);
-  }
+    public void fullname() {
+        System.out.println(fname + " " + lname);
+    }
 }
 
 class Employee extends Person {
-  float salary;
+    float salary;
 
-  public Employee(String firstName, String lastName, Float salaryAmount) {
-    super(firstName, lastName);
-    salary = salaryAmount;
-  }
+    public Employee(String firstName, String lastName, Float salaryAmount) {
+        super(firstName, lastName);
+        salary = salaryAmount;
+    }
 }</code></pre>
 		</details>
 		<details>
 			<summary>Polymorphism</summary>
 			<p>
-				Polymorphism is the ability of to take on different forms or behave in different ways depending on the context in which they are used. Programming Languages use **function overloading** and **function overriding** to implement polymorphism concepts.
+			Polymorphism is the ability of to take on different forms or behave in different ways depending on the context in which they are used. Programming Languages use <strong>function overloading</strong> and <strong>function overriding</strong> to implement polymorphism concepts.
 			</p>
 			<h4>Overloading</h4>
 			<p>
 				When methods with the same name is declared with different signatures, it is known as *function overloading*.
 			</p>
+<pre><code class="language-java">public class Area {
+    public static void main(String[] args) {
+        name("Sunny", "Beta");
+        name("Sunny Beta");
+    }
+
+    public static void name(String firstname, String lastname) {
+        System.out.println("First Name: " + firstname + ", Last Name: " + lastname);
+    }
+
+    public static void name(String fullname) {
+        System.out.println("Full Name: " + fullname);
+    }
+}</code></pre>
 			<h4>Overriding</h4>
 			<p>
-				When a method in the subclass with the same name and signature as its method from the superclass is inherited and modified in the child class, it is known as *function overriding*.
+			When a method in the subclass with the same name and signature as its method from the superclass is inherited and modified in the child class, it is known as <em>function overriding</em>.
 			</p>
+<pre><code class="language-java">class Overriding {
+    public static void main(String[] args) {
+        Person p = new Person("Sunny", "Beta");
+        Employee e = new Employee("Cloudy", "Alpha", 10_00_000f);
+        p.details();
+        e.details();
+    }
+}
+
+class Person {
+    public String fname;
+    public String lname;
+
+    public Person(String firstName, String lastName) {
+        fname = firstName;
+        lname = lastName;
+    }
+
+    public void details() {
+        System.out.println(fname + " " + lname);
+    }
+}
+
+class Employee extends Person {
+    float salary;
+
+    public Employee(String firstName, String lastName, Float salaryAmount) {
+        super(firstName, lastName);
+        salary = salaryAmount;
+    }
+
+    public void details() {
+        System.out.println(fname + " " + lname + " :: " + salary);
+    }
+}</code></pre>
 		</details>
 		<details>
 			<summary>Abstraction</summary>
 			<p>
-				Abstraction is the process of identifying the required characteristics and ignore the rest. It is the property by virtue of which only essential details are displayed. Programming languages use `abstract` classes and `interface`s to implement the concept of encapsulation.
+				Abstraction is the process of identifying the required characteristics and ignore the rest. It is the property by virtue of which only essential details are displayed. Programming languages use <code>abstract</code> classes and <code>interface</code>s to implement the concept of encapsulation.
 			</p>
+<pre><code class="language-java">class Abstraction {
+    public static void main(String[] args) {
+        Tech tech = new Tech();
+        tech.add(1,2);
+        tech.multiply(37,39);
+        System.out.println(tech.divide(666664,166666));
+        tech.modulo(1829,18);
+        System.out.println(tech.power(6,6));
+    }
+}
+
+public abstract class Compute {
+    abstract void add(int a,int b);
+    abstract void multiply(int a, int b);
+    abstract float divide(int a,int b);
+    abstract void modulo(int a,int b);
+    abstract double power(int a, int b);
+}
+
+public class Tech extends Compute {
+
+    public Tech() {}
+
+    void add(int a, int b) {
+        System.out.println(a + b);
+    }
+
+    void multiply(int a, int b) {
+        System.out.println(a * b);
+    }
+
+    float divide(int a, int b) {
+        return a / (float)b;
+    }
+
+    void modulo(int a, int b) {
+        while (a > 0) {
+            a -= b;
+        }
+        a += b;
+        System.out.println(a);
+    }
+
+    @Override
+    double power(int a, int b) {
+        double ans = 1;
+        while (b-- > 0) {
+            ans *= a;
+        }
+        return ans;
+    }
+}</code></pre>
 		</details>
 		<details>
 			<summary>Encapsulation</summary>
 			<p>
-				Encapsulation ensures that *sensitive* data is hidden from users. This concept is implemented by declaring the class variables  / attributes and methods as `private` or `protected`. In this case, the class may provide public *getter* and *setter* methods to access and / or update the value of a private or protected variable
+			Encapsulation ensures that *sensitive* data is hidden from users. This concept is implemented by declaring the class variables  / attributes and methods as <code>private</code> or <code>protected</code>. In this case, the class may provide public <em>getter</em> and <em>setter</em> methods to access and / or update the value of a private or protected variable
 			</p>
 			<h4>Private Attrubutes</h4>
 			<p>Thses attributes can only be accessed by instances of the same class. These cannot be accessed directly via instances of another class.
 			</p>
 			<h4>Protected Attrubutes</h4>
-			<p>Protected attrubutes* can be accessed by instances of the same class or a sub class.
+			<p>Protected attrubutes can be accessed by instances of the same class or a sub class.
 			</p>
+<pre><code class="language-java">public class Encapsulation {
+    public static void main(String[] args) {
+        Circle c = new Circle(10);
+        System.out.println("Circle's Old Radius = " + c.getRadius());
+        c.setRadius(11);
+        System.out.println("Circle's New Radius = " + c.getRadius());
+    }
+}
+
+class Circle {
+    private int radius;
+
+    public Circle() {
+        radius = 1;
+    };
+
+    public Circle(int radius) {
+        this.radius = radius;
+    };
+
+    public double Area() {
+        return 22.0/7 * radius * radius;
+    }
+
+    public int getRadius() {
+        return radius;
+    }
+
+    public void setRadius(int r) {
+        radius = r;
+    }
+}</code></pre>
 		</details>
 	</main>
 

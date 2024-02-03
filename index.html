@@ -3,40 +3,41 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Sunny Beta">
 	<meta name="description" content="Software Engineering Notes by Sunny Beta">
-	<title>SDE Notes</title>
+	<title>SDE Notes | Sunny Beta</title>
 	<link rel="stylesheet" href="style.css" />
 </head>
 
-<body style="align-items: center; justify-content: center;">
+<body>
 
 	<nav>
 		<h3>SDE Notes</h3>
 		<input type="text" placeholder="Search ..."/>
 		<section class="contents">
-			<details open>
+			<details>
 				<summary>Basics</summary>
 				<ul>
-					<li><a href="oops.html">OOPS</a></li>
-					<li><a href="solid.html">SOLID</a></li>
-					<li><a href="multithreading.html">Multithreading</a></li>
+					<li><a class="active" href="oops.html">OOPS</a></li>
+					<li><a class="active" href="solid.html">SOLID</a></li>
+					<li><a class="active" href="multithreading.html">Multithreading</a></li>
 					<li><a href="concurrency.html">Concurrency</a></li>
 				</ul>
 			</details>
-			<details open>
+			<details>
 				<summary>Databases</summary>
 				<ul>
-					<li><a href="olapoltp.html">OLAP vs. OLTP</a></li>
+					<li><a class="active" href="olapoltp.html">OLAP vs. OLTP</a></li>
 					<li><a href="postgresql.html">PostgreSQL</a></li>
 					<li><a href="mongodb.html">MongoDB</a></li>
 					<li><a href="redis.html">Redis</a></li>
 					<li><a href="bp-trees.html">B+ Trees</a></li>
 				</ul>
 			</details>
-			<details open>
+			<details>
 				<summary>Data Structures</summary>
 				<ul>
-					<li><a href="linkedlist.html">Linked Lis<a href=".html">t</a></li>
+					<li><a class="active" href="linkedlist.html">Linked List<a href=".html"></a></li>
 					<li><a href="stack.html">Stack</a></li>
 					<li><a href="queue.html">Queue</a></li>
 					<li><a href="set.html">Set</a></li>
@@ -50,7 +51,7 @@
 					<li><a href="suffixarray.html">Suffix Array</a></li>
 					<li><a href="treap.html">Treap</a></li>
 			</details>
-			<details open>
+			<details>
 				<summary>Algorithms</summary>
 				<ul>
 					<li><a href="mergesort.html">Merge Sort</a></li>
@@ -65,35 +66,36 @@
 					<li><a href="knuth-morris-pratt.html">Knuth-Morris-Pratt</a></li>
 					<li><a href="ahocorasick.html">Aho Corasick</a></li>
 			</details>
-			<details open>
+			<details>
 				<summary>Design Patterns</summary>
 				<ul>
 					<li><a href="adapter.html">Adapter</a></li>
-					<li><a href="factory.html">Factory</a></li>
-					<li><a href="observer.html">Observer</a></li>
-					<li><a href="builder.html">Builder</a></li>
 					<li><a href="bridge.html">Bridge</a></li>
-					<li><a href="prototype.html">Prototpye</a></li>
-					<li><a href="singleton.html">Singleton</a></li>
-					<li><a href="flyweight.html">Flyweight</a></li>
+					<li><a href="builder.html">Builder</a></li>
 					<li><a href="decorator.html">Decorator</a></li>
 					<li><a href="facade.html">Facade</a></li>
-					<li><a href="proxy.html">Proxy</a></li>
+					<li><a href="factory.html">Factory</a></li>
+					<li><a href="flyweight.html">Flyweight</a></li>
 					<li><a href="iterator.html">Iterator</a></li>
 					<li><a href="mediator.html">Mediator</a></li>
+					<li><a href="observer.html">Observer</a></li>
+					<li><a href="prototype.html">Prototpye</a></li>
+					<li><a href="proxy.html">Proxy</a></li>
+					<li><a class="active" href="singleton.html">Singleton</a></li>
 					<li><a href="state.html">State</a></li>
+					<li><a class="active" href="strategy.html">Strategy</a></li>
 				</ul>
 			</details>
-			<details open>
+			<details>
 				<summary>Languages</summary>
 				<ul>
-					<li><a href="java.html">Java</a></li>
+					<li><a class="active" href="java.html">Java</a></li>
 					<li><a href="javascript.html">Javascript</a></li>
 					<li><a href="typescript.html">Typescript</a></li>
 					<li><a href="python.html">Python</a></li>
 				</ul>
 			</details>
-			<details open>
+			<details>
 				<summary>DevOps</summary>
 				<ul>
 					<li><a href="cicd.html">CI/CD</a></li>
@@ -105,7 +107,7 @@
 					<li><a href="aws.html">AWS</a></li>
 				</ul>
 			</details>
-			<details open>
+			<details>
 				<summary>AWS</summary>
 				<ul>
 					<li><a href="s3.html">S3</a></li>
@@ -117,7 +119,7 @@
 					<li><a href="iam.html">IAM</a></li>
 				</ul>
 			</details>
-			<details open>
+			<details>
 				<summary>System Design</summary>
 				<ul>
 					<li><a href="scaling.html">Scaling</a></li>
@@ -129,7 +131,7 @@
 					<li><a href="oauth.html">OAuth</a></li>
 				</ul>
 			</details>
-			<details open>
+			<details>
 				<summary>Back End</summary>
 				<ul>
 					<li><a href="spring.html">Spring</a></li>
@@ -138,7 +140,7 @@
 					<li><a href="graphql.html">GraphQL</a></li>
 				</ul>
 			</details>
-			<details open>
+			<details>
 				<summary>Front End</summary>
 				<ul>
 					<li><a href="vuejs.html">VueJS</a></li>
@@ -152,7 +154,7 @@
 		<p>
 			Find all your programming resources here.
 			Good luck on your journey.
-			Select a topic  to begin.
+			Select a topic on the left to begin.
 		</p>
 	</main>
 

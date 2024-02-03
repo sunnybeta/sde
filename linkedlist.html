@@ -1,0 +1,126 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Sunny Beta">
+	<meta name="description" content="Software Engineering Notes by Sunny Beta">
+	<title>SDE Notes | Linked List</title>
+	<link rel="stylesheet" href="style.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+
+<body>
+
+	<main>
+		<h1>Linked List</h1>
+		<details>
+			<summary>Code</summary>
+<pre><code>public class Main{
+    public static void main(String[] args) {
+        LinkedList list = new LinkedList();
+        if (list.isEmpty()) {
+            System.out.println("List is empty");
+        }
+        list.add(1);
+        list.add(3);
+        list.add(2);
+        list.add(4);
+        list.add(11);
+        list.add(-4);
+        System.out.println("Length: " + list.length());
+        list.delete(1);
+        System.out.println("Length: " + list.length());
+        list.display();
+        list.delete(4);
+        System.out.println("Length: " + list.length());
+        list.display();
+        list.reverse();
+        list.display();
+    }
+}
+
+public class Node{
+    public int data;
+    public Node next;
+
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+public class LinkedList{
+    public Node start = null;
+
+    public LinkedList() {}
+
+    public boolean isEmpty() {
+        return start == null;
+    }
+
+    public void add(int data) {
+        Node node = new Node(data);
+        if (start == null) {
+            start = node;
+            return;
+        }
+        Node curr = start;
+        while (curr.next != null) curr = curr.next;
+        curr.next = node;
+    }
+
+    public void display() {
+        Node node = start;
+        System.out.println("START -> ");
+        while (node != null) {
+            System.out.print(node.data + " -> ");
+            node = node.next;
+        }
+        System.out.println("END");
+    }
+
+    public int length() {
+        int count = 0;
+        Node node = start;
+        while (node != null) {
+            count++;
+            node = node.next;
+        }
+        return count;
+    }
+
+    public void delete(int index) {
+        Node prev = null;
+        Node curr = start;
+        index--;
+        while (curr != null && index >= 0) {
+            prev = curr;
+            curr = curr.next;
+            index--;
+        }
+        if (curr != null && prev != null) {
+            prev.next = curr.next;
+        }
+    }
+
+    public void reverse() {
+        Node first = null;
+        Node middle = start;
+        Node last = start; // trick to avoid if last == null condition on every iteration
+        while (middle != null) {
+            last = last.next; // trick to avoid if last == null condition on every iteration
+            middle.next = first;
+            first = middle;
+            middle = last;
+        }
+        start = first;
+    }
+}</code></pre>
+		</details>
+	</main>
+
+</body>
+
+</html>
