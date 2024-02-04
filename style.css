@@ -285,3 +285,15 @@ main .faq .answer{
 		font-style: italic;
 	}
 }
+
+main .uml{
+	margin: 1rem 0;
+	width: 902px;
+	border: 1px solid var(--accent);
+
+	& > img{
+		width: 900px;
+	}
+
+}
+
