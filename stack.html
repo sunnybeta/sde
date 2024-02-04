@@ -1,0 +1,105 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Sunny Beta">
+	<meta name="description" content="Software Engineering Notes by Sunny Beta">
+	<title>SDE Notes | Stack</title>
+	<link rel="stylesheet" href="style.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+
+<body>
+
+	<main>
+		<h1>Stack</h1>
+		<details>
+			<summary>Code</summary>
+<pre><code class="language-java">public class Main{
+  public static void main(String[] args) {
+    Stack stack = new Stack();
+    stack.push(1);
+    stack.display();
+    stack.push(2);
+    stack.display();
+    stack.push(3);
+    stack.display();
+    stack.push(4);
+    stack.display();
+    stack.pop();
+    stack.display();
+    stack.pop();
+    stack.display();
+    stack.pop();
+    stack.display();
+    stack.pop();
+    stack.display();
+    stack.pop();
+    stack.display();
+  }
+}
+
+public class Element {
+  public int data;
+  public Element next;
+
+  public Element(int data) {
+    this.data = data;
+    this.next = null;
+  }
+}
+
+public class Stack{
+  private Element top;
+
+  public Stack() {}
+
+  public void push(int data) {
+    Element e = new Element(data);
+    e.next = top;
+    top = e;
+  }
+
+  public int pop() {
+    if (top == null) {
+      System.out.println("Stack is empty");
+      return -9999;
+    }
+    int data = top.data;
+    top = top.next;
+    return data;
+  }
+
+  public boolean isEmpty() {
+    return top == null;
+  }
+
+  public int size() {
+    int count = 0;
+    Element p = top;
+    while (p != null) {
+      count++;
+      p = p.next;
+    }
+    return count;
+  }
+
+  public void display() {
+    Element p = top;
+    System.out.print("TOP");
+    while (p != null) {
+      System.out.print(" -> " + p.data);
+      p = p.next;
+    }
+    System.out.println();
+  }
+}</code></pre>
+		</details>
+	</main>
+
+</body>
+
+</html>
+
