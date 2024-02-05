@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-width=1.0">
+	<meta name="author" content="Sunny Beta">
+	<meta name="description" content="Software Engineering Notes by Sunny Beta: Flywieght Design Pattern">
+	<title>Flywieght Pattern | SDE Notes</title>
+	<link rel="stylesheet" href="style.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+
+<body>
+
+<main>
+	<h1>Flywieght Design Pattern</h2>
+
+	<ul class="bullet">
+		<li>Structural Design Pattern</li>
+		<li>Allows you to store more objects into the RAM by sharing common parts of state between multiple objects instead of storing all data individiually</li>
+	</ul>
+
+	<div class="uml">
+		<img src="./assets/flyweight.png">
+	</div>
+
+<pre><code class="language-java">// Flyweight Design Pattern
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.HashMap;
+
+public class Main {
+	public static void main(String[] args) {
+		Store store = new Store();
+		store.storeBook("Metamorphosis", 20.05, "philosophy","springer","none");
+		store.storeBook("Real Analysis", 21.00, "mathematics","springer","none");
+		store.storeBook("Morality", 20.05, "philosophy","springer","none");
+		store.print();
+	}
+}
+
+/**
+ * Encapsulate the extrinsic state of the Book
+ */
+public class Book {
+	private String name;
+	private double price;
+	private final BookType type;
+
+	public Book(String name, double price, BookType type) {
+		this.name = name;
+		this.price = price;
+		this.type = type;
+	}
+
+	public void print() {
+		System.out.println(this.name+"\t"+this.price+"\t"+this.type);
+	}
+}
+
+/**
+ * BookType Class
+ * Intrinsic States which are shareble and never altered at truntime
+ */
+public class BookType {
+	private final String type;
+	private final String distributor;
+	private final String otherData;
+
+	public BookType(String type, String distributor, String otherData) {
+		this.type = type;
+		this.distributor = distributor;
+		this.otherData = otherData;
+	}
+}
+
+/**
+ * Flyweight Factory
+ */
+public class BookFactory {
+	private static final Map<String, BookType> bookTypes = new HashMap<>();
+
+	public static BookType getBookType(String type, String distributor, String otherData) {
+		if (bookTypes.get(type) == null) bookTypes.put(type, new BookType(type, distributor, otherData));
+		return bookTypes.get(type);
+	}
+}
+
+
+public class Store{
+	private final List<Book> books = new ArrayList<>();
+
+	public void storeBook(String name, double price, String type, String distributor, String otherData) {
+		BookType bookType = BookFactory.getBookType(type, distributor, otherData);
+		books.add(new Book(name, price, bookType));
+	}
+
+	public void print() {
+		for (Book book: books) book.print();
+	}
+}</code></pre>
+
+</main>
+
+</body>
+
+</html>
