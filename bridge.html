@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-width=1.0">
+	<meta name="author" content="Sunny Beta">
+	<meta name="description" content="Software Engineering Notes by Sunny Beta: Bridge Design Pattern">
+	<title>Bridge Pattern | SDE Notes</title>
+	<link rel="stylesheet" href="style.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+
+<body>
+
+<main>
+	<h1>Bridge Design Pattern</h2>
+
+	<ul class="bullet">
+		<li>Structural Design Pattern</li>
+		<li>Allows you extends a class consisting of two or more dimensions into separate heirarcheis which can be developed independently</li>
+		<li>The idea is to use create <code>abstract</code> classes equal to the number of dimensions and use composition</li>
+	</ul>
+
+	<div class="uml">
+		<img src="./assets/bridge.png">
+	</div>
+
+<pre><code class="language-java">// Bridge Design Pattern
+public class Main {
+  public static void main(String[] args) {
+    Restaurant restaurant1 = new ItalianRestaurant(new PepperoniPizza());
+    restaurant1.deliver();
+    Restaurant restaurant2 = new ItalianRestaurant(new VeggiePizza());
+    restaurant2.deliver();
+    Restaurant restaurant3 = new AmericanRestaurant(new PepperoniPizza());
+    restaurant3.deliver();
+    Restaurant restaurant4 = new AmericanRestaurant(new VeggiePizza());
+    restaurant4.deliver();
+  }
+}
+
+/**
+ * Implementation Layer
+ */
+public abstract class Pizza {
+  protected String sauce;
+  protected String crust;
+  protected String toppings;
+
+  public abstract void assemble();
+  public abstract void qualityCheck();
+
+  public void setSauce(String sauce) { this.sauce = sauce; }
+
+  public void setCrust(String crust) { this.crust = crust; }
+
+  public void setToppings(String toppings) { this.toppings = toppings; }
+}
+
+/**
+ * Concrete Implementation
+ */
+public class PepperoniPizza extends Pizza {
+  @Override
+  public void assemble() {
+    System.out.println("Sauce " + sauce);
+    System.out.println("Crust " + crust);
+    System.out.println("Toppings " + toppings);
+    System.out.println("Added Pepperoni");
+  }
+
+  @Override
+  public void qualityCheck() {
+    System.out.println("Crust is non-vegetarian " + crust);
+  }
+}
+
+/**
+ * Concrete Implementation
+ */
+public class VeggiePizza extends Pizza {
+  @Override
+  public void assemble() {
+    System.out.println("Sauce " + sauce);
+    System.out.println("Crust " + crust);
+    System.out.println("Toppings " + toppings);
+    System.out.println("Adding Veggies");
+  }
+
+  @Override
+  public void qualityCheck() {
+    System.out.println("Crust is vegetarian " + crust);
+  }
+}
+
+/**
+ * Abstraction Layer
+ */
+public abstract class Restaurant {
+  protected Pizza pizza;
+
+  public Restaurant(Pizza pizza) { this.pizza = pizza; }
+
+  public abstract void addSauce();
+  public abstract void addCrust();
+  public abstract void addToppings();
+
+  public void deliver() {
+    addSauce();
+    addToppings();
+    addCrust();
+    pizza.assemble();
+    pizza.qualityCheck();
+    System.out.println("Done!");
+  }
+}
+
+/**
+ * Refined Abstraction
+ */
+public class ItalianRestaurant extends Restaurant {
+
+  public ItalianRestaurant(Pizza pizza) { super(pizza); }
+
+  @Override
+  public void addSauce() { pizza.setSauce("Italian Sauce"); }
+
+  @Override
+  public void addCrust() { pizza.setCrust("Italian Crust"); }
+
+  @Override
+  public void addToppings() { pizza.setToppings("Italian Toppings"); }
+}
+
+/**
+ * Refined Abstraction
+ */
+public class AmericanRestaurant extends Restaurant {
+
+  public AmericanRestaurant(Pizza pizza) {
+    super(pizza);
+  }
+
+  @Override
+  public void addSauce() { pizza.setSauce("American Sauce"); }
+
+  @Override
+  public void addCrust() { pizza.setCrust("American Crust"); }
+
+  @Override
+  public void addToppings() { pizza.setToppings("American Toppings"); }
+}</code></pre>
+
+</main>
+
+</body>
+
+</html>
