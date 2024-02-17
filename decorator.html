@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-width=1.0">
+	<meta name="author" content="Sunny Beta">
+	<meta name="description" content="Software Engineering Notes by Sunny Beta: Decorator Design Pattern">
+	<title>Decorator Pattern | SDE Notes</title>
+	<link rel="stylesheet" href="style.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+
+<body>
+
+<div class='container'>
+<main>
+	<h1>Decorator Design Pattern</h2>
+
+	<ul class="bullet">
+		<li>Structural Design Pattern</li>
+		<li>Allows us to attach new behaviours to an object by placing this object inside a special wrapper that contains these behaviours.</li>
+	</ul>
+
+	<div class="uml">
+		<img src="./assets/decorator.png">
+	</div>
+
+	<details>
+		<summary>Code</summary>
+<pre><code class="language-java">// Decorator Design Pattern
+public class Main {
+  public static void main(String[] args) {
+    INotifier notifier = new FacebookDecorator(
+      new WhatsAppDecorator(
+        new Notifier("Avengers")
+      )
+    );
+    notifier.send("Good Luck");
+  }
+}
+
+public interface INotifier {
+  void send(String msg);
+  public String getUsername();
+}
+
+public class Notifier implements INotifier{
+  private final String username;
+  protected final DatabaseService databaseService;
+
+  public Notifier(String username) {
+    this.username = username;
+    databaseService = new DatabaseService();
+  }
+
+  public void send(String msg){
+    String mail = databaseService.getMailFromUsername(username);
+    System.out.println("Sending " + msg + " by Mail to " + mail);
+  }
+
+  public String getUsername() {
+    return username;
+  }
+}
+
+public class DatabaseService {
+  public String getFBNameFromUsername(String username) {
+    return username + "@Kewl";
+  }
+  public String getPhoneNumberFromUsername(String username) {
+    return username + "@123";
+  }
+  public String getMailFromUsername(String username) {
+    return username + "@Mail";
+  }
+}
+
+public class BaseNotifierDecorator implements INotifier{
+  private final INotifier wrapped;
+  protected final DatabaseService databaseService;
+
+  public BaseNotifierDecorator(INotifier wrapped) {
+    this.wrapped = wrapped;
+    databaseService = new DatabaseService();
+  }
+
+  public void send(String msg) {
+    wrapped.send(msg);
+  }
+
+  public String getUsername() {
+    return wrapped.getUsername();
+  }
+}
+
+public class FacebookDecorator extends BaseNotifierDecorator {
+
+  public FacebookDecorator(INotifier wrapped) {
+    super(wrapped);
+  }
+
+  public void send(String msg) {
+    super.send(msg);
+    String fbName = databaseService.getFBNameFromUsername(getUsername());
+    System.out.println("Sending " + msg + " on Facebook to " + fbName);
+  }
+}
+
+public class WhatsAppDecorator extends BaseNotifierDecorator{
+
+  public WhatsAppDecorator(INotifier wrapped) {
+    super(wrapped);
+  }
+
+  public void send(String msg) {
+    super.send(msg);
+    String phoneNumber = databaseService.getPhoneNumberFromUsername(getUsername());
+    System.out.println("Sending " + msg + " by WhatsApp on " + phoneNumber);
+  }
+}</code></pre>
+	</details>
+
+</main>
+
+</div>
+
+</body>
+
+</html>

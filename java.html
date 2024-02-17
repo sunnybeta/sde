@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -13,6 +14,7 @@
 
 <body>
 
+<div class="container">
 	<main>
 		<h1>Java</h1>
 
@@ -21,7 +23,7 @@
 			<p>
 			A <strong>Marker Interface</strong> and <strong>Tagging Interface</strong> is an interface which has no methods or constants inside it. It's job is to provide runtime type information about objects. The <code>Sizeable</code>, <code>Cloneable</code> and <code>Remote</code> interfaces are examples of built-in Java marker interfaces.
 			</p>
-			<pre><code>public class Main{
+			<pre><code class="language-java">public class Main{
     public static void main(String[] args){
         Hello hello = new Hello();
         Bye bye = new Bye();
@@ -52,6 +54,46 @@ public class Bye{
 				<strong>Deserialization</strong> is converting the byte stream back to its corresponding object or data, for instance, while reading a file and receiving data from a server.
 			</p>
 		</details>
+
+		<details>
+			<summary>Daemon Thread</summary>
+			<p>
+			A <em>daemon thread</em> is a low-priority thread that runs in the background providing service to user threads.
+			The life of a daemon thread depends on the main thread. JVM terminates the daemon thread once the main thread completes its execution.
+			The main thread is always a non-daemon thread. For other threads, the daemonic nature is inherited from their parent thread.
+			</p>
+			<pre><code>// Daemonic Thread
+public class Main {
+  public static void main(String[] args) {
+    Daemon thread1 = new Daemon("thread1");
+    Daemon thread2 = new Daemon("thread2");
+    Daemon thread3 = new Daemon("thread3");
+
+    thread1.setDaemon(true);
+
+    thread1.start();
+    thread2.start();
+
+    thread3.setDaemon(true);
+    thread3.start();
+  }
+}
+
+public class Daemon extends Thread {
+  public Daemon(String name) {
+    super(name);
+  }
+
+  public void run() {
+    if(Thread.currentThread().isDaemon()) {
+      System.out.println(getName() + " is Daemon Thread");
+    } else {
+      System.out.println(getName() + " is not Daemon Thread");
+    }
+  }
+}</code></pre>
+		</details>
+
 		<h2>FAQ</h2>
 		<details class='faq'>
 			<summary>Which one will you use for storing passwords: <code>String</code> vs <code>char[]</code></summary>
@@ -65,6 +107,7 @@ public class Bye{
 				</ul>
 			</p>
 		</details>
+
 		<details class='faq'>
 			<summary>What is the default capacity of an <code>ArrayList</code>?</summary>
 			<p class='answer'>
@@ -78,12 +121,14 @@ public class Bye{
 
 			</p>
 		</details>
+
 		<details class='faq'>
 			<summary>Can we have a standalone <code>try</code> block in Java?</summary>
 			<p>
 			No. We must have a <code>catch</code> or a <code>finally</code> block along with the <code>try</code> block.
 			</p>
 		</details>
+
 			<li>Composition vs Aggergation</li>
 			<li>Queue: poll vs remove</li>
 			<li>Streams vs Collections</li>
@@ -103,6 +148,7 @@ public class Bye{
 			<li>FailSafe vs FailFast</li>
 			<li>CopyonWriteArrayList</li>
 	</main>
+</div>
 
 </body>
 
