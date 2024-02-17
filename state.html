@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-width=1.0">
+	<meta name="author" content="Sunny Beta">
+	<meta name="description" content="Software Engineering Notes by Sunny Beta: State Design Pattern">
+	<title>State Pattern | SDE Notes</title>
+	<link rel="stylesheet" href="style.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+
+<body>
+
+<div class="container">
+<main>
+	<h1>State Design Pattern</h2>
+
+	<ul class="bullet">
+		<li>Behavorial Design Pattern</li>
+		<li>Allows an object to change its behaviour when its internal state changes</li>
+	</ul>
+
+	<div class="uml">
+		<img src="./assets/state.png">
+	</div>
+
+	<details>
+		<summary>Code</summary>
+<pre><code class="language-java">// State Design Pattern
+public class Main {
+  public static void main(String[] args) {}
+}
+
+public class Phone {
+  private State state;
+  public Phone() {
+    state = new OffState(this);
+  }
+  public void setState(State state) {
+    this.state = state;
+  }
+  public String lock() {
+    return "Lock";
+  }
+  public String home() {
+    return "Home";
+  }
+  public String unlock() {
+    return "Unlock";
+  }
+  public String turnOn() {
+    return "Turn On";
+  }
+}
+
+public abstract class State {
+  protected Phone phone;
+  public State(Phone phone) {
+    this.phone = phone;
+  }
+  public abstract String onHome();
+  public abstract String onOffOn();
+}
+
+public class OffState extends State {
+  public OffState(Phone phone) { super(phone); }
+  @Override
+  public String onHome() {
+    phone.setState(new LockedState(phone));
+    return phone.turnOn();
+  }
+  @Override
+  public String onOffOn() {
+    phone.setState(new LockedState(phone));
+    return phone.turnOn();
+  }
+}
+public class ReadyState extends State {
+  public ReadyState(Phone phone) { super(phone); }
+  @Override
+  public String onHome() {
+    return phone.home();
+  }
+  @Override
+  public String onOffOn() {
+    phone.setState(new OffState(phone));
+    return phone.lock();
+  }
+}
+public class LockedState extends State {
+  public LockedState(Phone phone) { super(phone); }
+  @Override
+  public String onHome() {
+    phone.setState(new ReadyState(phone));
+    return phone.unlock();
+  }
+  @Override
+  public String onOffOn() {
+    phone.setState(new OffState(phone));
+    return phone.lock();
+  }
+}</code></pre>
+</details>
+
+</main>
+</div>
+
+</body>
+
+</html>
